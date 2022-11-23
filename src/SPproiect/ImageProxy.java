@@ -3,7 +3,7 @@ package SPproiect;
 import java.awt.*;
 import java.util.List;
 
-public class ImageProxy implements Element{
+public class ImageProxy implements Pictures,Element{
     private String url;
     private Dimension dim;
     private Image realImg;
@@ -11,7 +11,7 @@ public class ImageProxy implements Element{
         if (realImg == null){
             realImg = new Image(url);
         }
-
+//        return realImg;
     }
     ImageProxy(String url){
         this.url = url;
@@ -38,5 +38,10 @@ public class ImageProxy implements Element{
     @Override
     public Element get(int index) {
         return null;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+
     }
 }

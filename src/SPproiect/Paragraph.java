@@ -2,13 +2,20 @@ package SPproiect;
 
 public class Paragraph implements Element{
     private String text;
+    private AlignStrategy alignStrategy;
 
     public Paragraph(String text) {
         this.text = text;
     }
     @Override
     public void print(){
-        System.out.println("Paragraph: "+ text);
+        System.out.print("Paragraph: ");
+        if(alignStrategy != null){
+            alignStrategy.render(text);
+        }else{
+            System.out.println(text);
+        }
+
     }
 
     public void add(Element e){
@@ -17,5 +24,16 @@ public class Paragraph implements Element{
     }
     public Element get(int index){
         return null;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitParagraph(this);
+    }
+    public String getText(){
+        return text;
+    }
+    public void setAlignStrategy(AlignStrategy strategy){
+        this.alignStrategy = strategy;
     }
 }
