@@ -1,8 +1,8 @@
-package SPproiect;
+package services;
 
-import javax.naming.Context;
+import models.AlignStrategy;
 
-public class AlignRight implements AlignStrategy{
+public class AlignRight implements AlignStrategy {
     @Override
     public void render(String text) {
         System.out.printf("### %s #\n",text);

@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Section implements Element{
 
 
@@ -39,5 +42,9 @@ public class Section implements Element{
         for(Element e:elements) {
             e.accept(visitor);
         }
+    }
+
+    public String getTitle(){
+        return this.title;
     }
 }

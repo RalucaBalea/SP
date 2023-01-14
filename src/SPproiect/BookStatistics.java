@@ -42,7 +42,7 @@ public class BookStatistics implements Visitor {
     }
 
     @Override
-    public void visitTable(Table table) {
+    public void visitTable(Table table)  {
         this.tables += 1;
     }
 
